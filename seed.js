@@ -1,13 +1,14 @@
 const Firestore = require('@google-cloud/firestore');
-const dataManager = require('./src/db/dataManager');
+const dataManager = require('./src/db/dbWrapper');
 
 // Connect to Firestore
 const db = new Firestore({
   projectId: 'shopapi-217123',
-  keyFilename: '..\\ShopAPI-685f124335fa.json',
+  keyFilename: './ShopAPI-685f124335fa.json',
 });
 
-const timestamp = new Date();
+const settings = { timestampsInSnapshots: true };
+db.settings(settings);
 
 // Seed products
 const products = [
@@ -45,9 +46,8 @@ const users = [
     {
       first: 'Mateus',
       last: 'Gurgel',
-      member_since: timestamp,
       orders: [
-        'mybeauty_mgurgel_1',
+        'matMilkBread_mgurgel_1',
       ],
     },
   },
@@ -62,7 +62,7 @@ dataManager.deleteCollection(db, 'users').then(() => {
 // Seed shops collection
 const shops = [
   {
-    _id: 'mybeauty',
+    _id: 'matMilkBread',
     data: {
       description: 'we only have 2 products!',
       name: "mat's milk and bread store",
@@ -83,9 +83,8 @@ dataManager.deleteCollection(db, 'shops').then(() => {
 // Seed orders
 const orders = [
   {
-    _id: 'mybeauty_mgurgel_1',
+    _id: 'matMilkBread',
     data: {
-      datetime: timestamp,
       line_items: [
         {
           product: 'milk-1',
