@@ -9,4 +9,3 @@ automatic_scaling:
   max_num_instances: 20
   cool_down_period_sec: 60
   cpu_utilization:
-target_utilization: 0.80
