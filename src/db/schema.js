@@ -4,7 +4,7 @@ const dataManager = require('./dbWrapper');
 
 const db = new Firestore({
   projectId: 'shopapi-217123',
-  keyFilename: '../../ShopAPI-685f124335fa.json',
+  keyFilename: '../ShopAPI-685f124335fa.json',
 });
 
 const settings = { timestampsInSnapshots: true };
