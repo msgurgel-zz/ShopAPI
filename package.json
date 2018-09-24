@@ -1,0 +1,30 @@
+{
+  "name": "shopapi",
+  "version": "1.0.0",
+  "description": "My shop API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node --harmony src/server.js",
+    "seed": "node --harmony ./seed.js",
+    "test": "test"
+  },
+  "author": "mgurgel",
+  "license": "ISC",
+  "dependencies": {
+    "@google-cloud/firestore": "^0.17.0",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^14.0.2",
+    "graphql-iso-date": "^3.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.6.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-google": "^0.10.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  }
+}
